@@ -1,4 +1,5 @@
 ﻿using EDAW.Data;
+using EDAW.Database;
 using MongoDB.Bson;
 using MongoDB.Driver;
 using System;
@@ -10,20 +11,27 @@ using System.Threading.Tasks;
 namespace EDAW.Contexts
 {
     class JobExplrContext
-    {
-        private IMongoDatabase explorerDB;
-        
-        public JobExplrContext(MongoClient client)
-        {
-            this.explorerDB = client.GetDatabase("EmployerData");
+    {       
+        public JobExplrContext()
+        {           
         }
 
-        public IMongoCollection<BsonDocument> JobExplorers
+        public IMongoCollection<JobExplorer> JobExplorers
         {
             get
             {
-                return explorerDB.GetCollection<BsonDocument>("JobExplorers");
+                return Mongo.DbContext.GetCollection<JobExplorer>("JobExplorers");
             }
+        }
+
+        public IEnumerable<JobExplorer> Find(Func<JobExplorer, bool> predicate)
+        {
+            return JobExplorers.AsQueryable().Where(predicate);
+        }
+
+        public void Add(JobExplorer explorer)
+        {
+
         }
     }
 }
