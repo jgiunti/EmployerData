@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Linq.Expressions;
 
 namespace EDAW.Database
 {
@@ -30,42 +31,32 @@ namespace EDAW.Database
 
         public void Add<T>(IEnumerable<T> items) where T : class, new()
         {
-            throw new NotImplementedException();
+            _db.GetCollection<T>(typeof(T).Name).InsertMany(items);
         }
 
         public void Add<T>(T item) where T : class, new()
         {
-            throw new NotImplementedException();
+            _db.GetCollection<T>(typeof(T).Name).InsertOne(item);
         }
 
         public IQueryable<T> All<T>() where T : class, new()
         {
-            throw new NotImplementedException();
+            return _db.GetCollection<T>(typeof(T).Name).AsQueryable();
         }
 
-        public IQueryable<T> All<T>(int page, int pageSize) where T : class, new()
+        public void Delete<T>(Expression<Func<T, bool>> predicate) where T : class, new()
         {
-            throw new NotImplementedException();
-        }
-
-        public void Delete<T>(T item) where T : class, new()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Delete<T>(Func<T, bool> predicate) where T : class, new()
-        {
-            throw new NotImplementedException();
+            _db.GetCollection<T>(typeof(T).Name).DeleteMany<T>(predicate);
         }
 
         public void DeleteAll<T>() where T : class, new()
         {
-            throw new NotImplementedException();
+            _db.DropCollection(typeof(T).Name);
         }
 
-        public T Single<T>(Func<T, bool> predicate) where T : class, new()
+        public T Single<T>(Expression<Func<T, bool>> predicate) where T : class, new()
         {
-            throw new NotImplementedException();
+            return All<T>().Where(predicate).SingleOrDefault<T>();
         }
     }
 }
