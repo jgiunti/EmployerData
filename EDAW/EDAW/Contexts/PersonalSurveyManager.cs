@@ -1,10 +1,8 @@
-﻿using EDAW.Database;
+﻿using EDAW.Data;
+using EDAW.Database;
 using EDAW.Objects;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace EDAW.Contexts
 {
@@ -16,6 +14,11 @@ namespace EDAW.Contexts
             {
                 return DBContext.Current.All<PersonalSurvey>();
             }
+        }
+
+        public static IEnumerable<PersonalSurvey> Find(JobExplorer jobExplorer)
+        {
+            return PersonalSurveys.AsQueryable().Where(x => jobExplorer.personalSurveys.Contains(x.id));
         }
     }
 }
