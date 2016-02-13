@@ -1,6 +1,7 @@
 ﻿using EDAW.Contexts;
 using EDAW.Data;
 using EDAW.Database;
+using EDAW.Objects;
 using MongoDB.Bson;
 using MongoDB.Driver;
 using System;
@@ -21,15 +22,15 @@ namespace EDAW
         {
             InitializeComponent();
             
-
             JobExplrContext jec = new JobExplrContext();
             IQueryable<JobExplorer> test = jec.JobExplorers;
 
-            JobExplorer bob = test.First();
-
-            System.Diagnostics.Debug.WriteLine(test.First().ToJson());
-            //jeCtxt.InsertOne(new JobExplorer());
+            int cnt = test.Count();
             
+            foreach (JobExplorer je in test)
+            {               
+                System.Diagnostics.Debug.WriteLine(je.ToJson());
+            }                        
         }
     }
 }

@@ -26,10 +26,7 @@ namespace EDAW.Database
             MongoClientSettings settings = new MongoClientSettings();
             settings.Server = new MongoServerAddress("localhost", 27017);
 
-            _client = new MongoClient(settings);
-
-            //_client.GetDatabase("EmployerData").GetCollection()
-            
+            _client = new MongoClient(settings);         
         }
 
         public void Add<T>(IEnumerable<T> items) where T : class, new()
@@ -41,7 +38,7 @@ namespace EDAW.Database
         {
             _db.GetCollection<T>(typeof(T).Name).InsertOne(item);
         }
-
+       
         public IQueryable<T> All<T>() where T : class, new()
         {
             return _db.GetCollection<T>(typeof(T).Name).AsQueryable();

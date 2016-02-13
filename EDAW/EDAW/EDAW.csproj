@@ -64,6 +64,7 @@
     <Compile Include="Database\Mongo.cs" />
     <Compile Include="Interfaces\IRepository.cs" />
     <Compile Include="Objects\Employer.cs" />
+    <Compile Include="Objects\EmployerSurvey.cs" />
     <Compile Include="Objects\JobExplorer.cs" />
     <Compile Include="Forms\Launchpad.cs">
       <SubType>Form</SubType>
