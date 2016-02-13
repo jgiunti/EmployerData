@@ -16,11 +16,11 @@ namespace EDAW.Contexts
         {           
         }
 
-        public IMongoCollection<JobExplorer> JobExplorers
+        public IQueryable<JobExplorer> JobExplorers
         {
             get
             {
-                return Mongo.DbContext.GetCollection<JobExplorer>("JobExplorers");
+                return DBContext.Current.All<JobExplorer>();
             }
         }
 

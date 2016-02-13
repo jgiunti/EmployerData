@@ -27,6 +27,9 @@ namespace EDAW.Database
             settings.Server = new MongoServerAddress("localhost", 27017);
 
             _client = new MongoClient(settings);
+
+            //_client.GetDatabase("EmployerData").GetCollection()
+            
         }
 
         public void Add<T>(IEnumerable<T> items) where T : class, new()

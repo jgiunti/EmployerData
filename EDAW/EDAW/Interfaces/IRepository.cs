@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace EDAW.Interfaces
 {
-    interface IRepository
+    public interface IRepository
     {
         void Delete<T>(Expression<Func<T, bool>> expression) where T : class, new();
 

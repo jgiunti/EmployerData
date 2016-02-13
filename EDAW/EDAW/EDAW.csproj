@@ -60,6 +60,7 @@
   <ItemGroup>
     <Compile Include="Application\Data\User.cs" />
     <Compile Include="Contexts\JobExplrContext.cs" />
+    <Compile Include="Database\DBContext.cs" />
     <Compile Include="Database\Mongo.cs" />
     <Compile Include="Interfaces\IRepository.cs" />
     <Compile Include="Objects\Employer.cs" />
@@ -70,6 +71,7 @@
     <Compile Include="Forms\Launchpad.Designer.cs">
       <DependentUpon>Launchpad.cs</DependentUpon>
     </Compile>
+    <Compile Include="Objects\PersonalSurvey.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\Launchpad.resx">

@@ -20,12 +20,14 @@ namespace EDAW
         public Form1()
         {
             InitializeComponent();
-            Mongo.Initialize();
+            
 
             JobExplrContext jec = new JobExplrContext();
-            IMongoCollection<JobExplorer> jeCtxt = jec.JobExplorers;
+            IQueryable<JobExplorer> test = jec.JobExplorers;
 
-            System.Diagnostics.Debug.WriteLine(jeCtxt.AsQueryable().First().ToJson());
+            JobExplorer bob = test.First();
+
+            System.Diagnostics.Debug.WriteLine(test.First().ToJson());
             //jeCtxt.InsertOne(new JobExplorer());
             
         }
