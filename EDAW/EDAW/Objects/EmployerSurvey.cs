@@ -11,69 +11,69 @@ namespace EDAW.Objects
     {
         public ObjectId id;
 
-        public int cur_or_form;
-        public int jobsec_cur;
-        public int worklife_cur;
-        public int workload_cur;
-        public int careerpath_cur;
-        public int td_cur;
-        public int promo_cur;
-        public int goodsup_cur;
-        public int auton_cur;
-        public int promocrit_cur;
-        public int salary_cur;
-        public int flex_cur;
-        public int rewperf_cur;
-        public int mission_cur;
-        public int health_cur;
-        public int rewrecog_cur;
-        public int workspace_cur;
-        public int poorperfs_cur;
-        public int careless1;
-        public int jobsat;
-        public int commit;
-        public int itl;
-        public int careless2;
-        public int values;
-        public int jobperf;
-        public int coop;
-        public int help;
-        public int court;
-        public string cur_emp_name;
-        public int cur_state;
-        public string cur_town;
-        public string curr_city_country;
-        public string cur_ten_years;
-        public int cur_ten_mos;
-        public int hours_per_week_work;
-        public int jobsec_for;
-        public int workload_for;
-        public int worklife_for;
-        public int careerpath_for;
-        public int td_for;
-        public int goodsup_for;
-        public int promo_for;
-        public int auton_for;
-        public int promocrit_for;
-        public int salary_for;
-        public int flex_for;
-        public int rewperf_for;
-        public int mission_for;
-        public int health_for;
-        public int rewrecog_for;
-        public int workspace_for;
-        public int poorperfs_for;
-        public string for_emp_name;
-        public string for_state;
-        public string for_town;
-        public string curr_city_country_intl;
-        public int for_sepyear;
-        public string for_ten_years;
-        public int for_ten_mos;
-        public string for_leave_choice;
-        public int hours_per_week2;
-        public string comments;
-        public string timeStamp;
+        public int cur_or_form { get; set; }
+        public int jobsec_cur { get; set; }
+        public int worklife_cur { get; set; }
+        public int workload_cur { get; set; }
+        public int careerpath_cur { get; set; }
+        public int td_cur { get; set; }
+        public int promo_cur { get; set; }
+        public int goodsup_cur { get; set; }
+        public int auton_cur { get; set; }
+        public int promocrit_cur { get; set; }
+        public int salary_cur { get; set; }
+        public int flex_cur { get; set; }
+        public int rewperf_cur { get; set; }
+        public int mission_cur { get; set; }
+        public int health_cur { get; set; }
+        public int rewrecog_cur { get; set; }
+        public int workspace_cur { get; set; }
+        public int poorperfs_cur { get; set; }
+        public int careless1 { get; set; }
+        public int jobsat { get; set; }
+        public int commit { get; set; }
+        public int itl { get; set; }
+        public int careless2 { get; set; }
+        public int values { get; set; }
+        public int jobperf { get; set; }
+        public int coop { get; set; }
+        public int help { get; set; }
+        public int court { get; set; }
+        public string cur_emp_name { get; set; }
+        public int cur_state { get; set; }
+        public string cur_town { get; set; }
+        public string curr_city_country { get; set; }
+        public string cur_ten_years { get; set; }
+        public int cur_ten_mos { get; set; }
+        public int hours_per_week_work { get; set; }
+        public int jobsec_for { get; set; }
+        public int workload_for { get; set; }
+        public int worklife_for { get; set; }
+        public int careerpath_for { get; set; }
+        public int td_for { get; set; }
+        public int goodsup_for { get; set; }
+        public int promo_for { get; set; }
+        public int auton_for { get; set; }
+        public int promocrit_for { get; set; }
+        public int salary_for { get; set; }
+        public int flex_for { get; set; }
+        public int rewperf_for { get; set; }
+        public int mission_for { get; set; }
+        public int health_for { get; set; }
+        public int rewrecog_for { get; set; }
+        public int workspace_for { get; set; }
+        public int poorperfs_for { get; set; }
+        public string for_emp_name { get; set; }
+        public string for_state { get; set; }
+        public string for_town { get; set; }
+        public string curr_city_country_intl { get; set; }
+        public int for_sepyear { get; set; }
+        public string for_ten_years { get; set; }
+        public int for_ten_mos { get; set; }
+        public string for_leave_choice { get; set; }
+        public int hours_per_week2 { get; set; }
+        public string comments { get; set; }
+        public string timeStamp { get; set; }
 
         public EmployerSurvey(int cur_or_form, int jobsec_cur, int worklife_cur, int workload_cur, int careerpath_cur, int td_cur, int promo_cur, int goodsup_cur, int auton_cur, int promocrit_cur,
             int salary_cur, int flex_cur, int rewperf_cur, int mission_cur, int health_cur, int rewrecog_cur, int workspace_cur, int poorperfs_cur, int careless1, int jobsat, int commit,

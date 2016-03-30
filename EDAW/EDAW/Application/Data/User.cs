@@ -6,7 +6,13 @@ using System.Threading.Tasks;
 
 namespace EDAW.App.Data
 {
-    class User
+    public static class User
     {
+        public static string saveFilePath;
+
+        public static void Init()
+        {
+            saveFilePath = String.Empty;
+        }
     }
 }

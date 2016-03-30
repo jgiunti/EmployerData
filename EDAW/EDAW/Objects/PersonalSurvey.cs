@@ -12,24 +12,24 @@ namespace EDAW.Objects
     {
         public ObjectId id;
         [BsonIgnoreIfNull]
-        public string timeStamp;
-        public int worklife_self;
-        public int jobsec_self;
-        public int td_self;
-        public int workload_self;
-        public int careerpath_self;
-        public int promocrit_self;
-        public int promo_self;
-        public int auton_self;
-        public int salary_self;
-        public int goodsup_self;
-        public int flex_self;
-        public int rewperf_self;
-        public int mission_self;
-        public int health_self;
-        public int rewrecog_self;
-        public int workspace_self;
-        public int poorperfs_self;
+        public string timeStamp { get; set; }
+        public int worklife_self { get; set; }
+        public int jobsec_self { get; set; }
+        public int td_self { get; set; }
+        public int workload_self { get; set; }
+        public int careerpath_self { get; set; }
+        public int promocrit_self { get; set; }
+        public int promo_self { get; set; }
+        public int auton_self { get; set; }
+        public int salary_self { get; set; }
+        public int goodsup_self { get; set; }
+        public int flex_self { get; set; }
+        public int rewperf_self { get; set; }
+        public int mission_self { get; set; }
+        public int health_self { get; set; }
+        public int rewrecog_self { get; set; }
+        public int workspace_self { get; set; }
+        public int poorperfs_self { get; set; }
 
         public PersonalSurvey(int wls, int jobsec, int td, int workld, int creerpth, int promcrit, int promsel, int auton, int sal,
             int goosp, int flex, int reperf, int mission, int health, int rewrec, int wrk, int poorperf, string ts)
