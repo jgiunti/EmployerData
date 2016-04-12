@@ -36,5 +36,10 @@ namespace EDAW.Contexts
         {
             DBContext.Current.Delete<JobExplorer>(x => x.id == jobExplorer.id);
         }
+
+        public static void Update(JobExplorer jobExplorer, UpdateDefinition<JobExplorer> update)
+        {
+            DBContext.Current.Update<JobExplorer>(x => x.id == jobExplorer.id, update);
+        }
     }
 }

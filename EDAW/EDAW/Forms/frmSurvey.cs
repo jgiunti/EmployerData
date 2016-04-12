@@ -1,5 +1,8 @@
 ﻿using EDAW.Data;
+using EDAW.Interfaces;
 using EDAW.Objects;
+using EDAW.Reports;
+using EDAW.Utilities;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,18 +20,26 @@ namespace EDAW.Forms
         public FormSurvey()
         {
             InitializeComponent();
-            dgvPersonal.ReadOnly = true;
-            dgvPersonal.AutoGenerateColumns = true;           
+            dgvSurvey.ReadOnly = true;
+            dgvSurvey.AutoGenerateColumns = true;           
         }
 
         public void LoadSurvey<T>(List<T> collection ) where T : class, new()
         {     
-            dgvPersonal.DataSource = (collection);
+            dgvSurvey.DataSource = (collection);
         }
 
         private void btnPersonalSurvy_Click(object sender, EventArgs e)
         {
-            
+            IReport report = new Top10EmpValues();
+            report.DrawReport();
+        }
+
+        private void btnExport_Click(object sender, EventArgs e)
+        {
+            DataExporter exporter = new DataExporter(dgvSurvey);
+
+            exporter.Export();
         }
     }
 }

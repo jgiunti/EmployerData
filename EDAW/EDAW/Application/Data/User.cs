@@ -8,7 +8,7 @@ namespace EDAW.App.Data
 {
     public static class User
     {
-        public static string saveFilePath;
+        public static string saveFilePath = @"G:\Documents\ExcelTest\";
 
         public static void Init()
         {

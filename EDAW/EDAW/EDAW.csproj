@@ -58,13 +58,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstract\Graph.cs" />
     <Compile Include="Application\Data\User.cs" />
+    <Compile Include="Contexts\EmployerManager.cs" />
     <Compile Include="Contexts\EmployerSurveyManager.cs" />
     <Compile Include="Contexts\JobExplorerManager.cs" />
     <Compile Include="Contexts\PersonalSurveyManager.cs" />
     <Compile Include="Database\DBContext.cs" />
     <Compile Include="Database\Mongo.cs" />
-    <Compile Include="Excel\Excel.cs" />
+    <Compile Include="Excel\BarChart.cs" />
+    <Compile Include="Excel\ExcelModel.cs" />
     <Compile Include="Forms\frmSurvey.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -72,6 +75,7 @@
       <DependentUpon>frmSurvey.cs</DependentUpon>
     </Compile>
     <Compile Include="Interfaces\IChart.cs" />
+    <Compile Include="Interfaces\IReport.cs" />
     <Compile Include="Interfaces\IRepository.cs" />
     <Compile Include="Objects\Employer.cs" />
     <Compile Include="Objects\EmployerSurvey.cs" />
@@ -85,6 +89,8 @@
     <Compile Include="Objects\PersonalSurvey.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reports\Top10EmpValues.cs" />
+    <Compile Include="Utilities\DataExporter.cs" />
     <EmbeddedResource Include="Forms\frmSurvey.resx">
       <DependentUpon>frmSurvey.cs</DependentUpon>
     </EmbeddedResource>

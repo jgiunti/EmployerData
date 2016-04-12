@@ -35,7 +35,12 @@ namespace EDAW.Database
         {
             _db.GetCollection<T>(typeof(T).Name).InsertOne(item);
         }
-       
+
+        public void Update<T>(Expression<Func<T, bool>> predicate, UpdateDefinition<T> update) where T : class, new()
+        {
+            _db.GetCollection<T>(typeof(T).Name).UpdateOne<T>(predicate, update);
+        }
+
         public IQueryable<T> All<T>() where T : class, new()
         {
             return _db.GetCollection<T>(typeof(T).Name).AsQueryable();

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MongoDB.Driver;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
@@ -20,5 +21,7 @@ namespace EDAW.Interfaces
         void Add<T>(T item) where T : class, new();
 
         void Add<T>(IEnumerable<T> items) where T : class, new();
+
+        void Update<T>(Expression<Func<T, bool>> predicate, UpdateDefinition<T> update) where T : class, new();
     }
 }

@@ -28,18 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dgvPersonal = new System.Windows.Forms.DataGridView();
+            this.dgvSurvey = new System.Windows.Forms.DataGridView();
             this.btnAnalysis = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPersonal)).BeginInit();
+            this.btnExport = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSurvey)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvPersonal
             // 
-            this.dgvPersonal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPersonal.Location = new System.Drawing.Point(13, 86);
-            this.dgvPersonal.Name = "dgvPersonal";
-            this.dgvPersonal.Size = new System.Drawing.Size(878, 550);
-            this.dgvPersonal.TabIndex = 0;
+            this.dgvSurvey.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSurvey.Location = new System.Drawing.Point(13, 86);
+            this.dgvSurvey.Name = "dgvSurvey";
+            this.dgvSurvey.Size = new System.Drawing.Size(878, 550);
+            this.dgvSurvey.TabIndex = 0;
             // 
             // btnAnalysis
             // 
@@ -51,23 +52,35 @@
             this.btnAnalysis.UseVisualStyleBackColor = true;
             this.btnAnalysis.Click += new System.EventHandler(this.btnPersonalSurvy_Click);
             // 
+            // btnExport
+            // 
+            this.btnExport.Location = new System.Drawing.Point(174, 23);
+            this.btnExport.Name = "btnExport";
+            this.btnExport.Size = new System.Drawing.Size(144, 47);
+            this.btnExport.TabIndex = 2;
+            this.btnExport.Text = "Export";
+            this.btnExport.UseVisualStyleBackColor = true;
+            this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
+            // 
             // FormSurvey
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(908, 648);
+            this.Controls.Add(this.btnExport);
             this.Controls.Add(this.btnAnalysis);
-            this.Controls.Add(this.dgvPersonal);
+            this.Controls.Add(this.dgvSurvey);
             this.Name = "FormSurvey";
             this.Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPersonal)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSurvey)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dgvPersonal;
+        private System.Windows.Forms.DataGridView dgvSurvey;
         private System.Windows.Forms.Button btnAnalysis;
+        private System.Windows.Forms.Button btnExport;
     }
 }
