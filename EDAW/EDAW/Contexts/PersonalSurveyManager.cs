@@ -26,5 +26,10 @@ namespace EDAW.Contexts
         {
             DBContext.Current.Update<PersonalSurvey>(x => x.id == survey.id, update);
         }
+
+        public static void Add(PersonalSurvey survey)
+        {
+            DBContext.Current.Add<PersonalSurvey>(survey);
+        }
     }
 }

@@ -17,6 +17,8 @@ namespace EDAW.Interfaces
 
         void NewSheet();
 
-        Graph NewGraph(double xpos, double ypos, double width, double height, string type = "");
+        Graph BarChart(double xpos, double ypos, double width, double height, string type = "");
+
+        Graph ColumnChart(double xpos, double ypos, double width, double height, string type = "");
     }
 }

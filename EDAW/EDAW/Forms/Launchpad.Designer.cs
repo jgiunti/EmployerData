@@ -42,6 +42,7 @@
             this.employerSurveyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnExport = new System.Windows.Forms.Button();
             this.grpExport = new System.Windows.Forms.GroupBox();
+            this.btnTop10 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvExplorers)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             this.grpExport.SuspendLayout();
@@ -149,11 +150,22 @@
             this.grpExport.TabStop = false;
             this.grpExport.Text = "Export Data";
             // 
+            // btnTop10
+            // 
+            this.btnTop10.Location = new System.Drawing.Point(331, 152);
+            this.btnTop10.Name = "btnTop10";
+            this.btnTop10.Size = new System.Drawing.Size(75, 23);
+            this.btnTop10.TabIndex = 2;
+            this.btnTop10.Text = "Top 10 ";
+            this.btnTop10.UseVisualStyleBackColor = true;
+            this.btnTop10.Click += new System.EventHandler(this.btnTop10_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1226, 615);
+            this.Controls.Add(this.btnTop10);
             this.Controls.Add(this.grpExport);
             this.Controls.Add(this.dgvExplorers);
             this.Name = "Form1";
@@ -180,6 +192,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colGener;
         private System.Windows.Forms.Button btnExport;
         private System.Windows.Forms.GroupBox grpExport;
+        private System.Windows.Forms.Button btnTop10;
     }
 }
 

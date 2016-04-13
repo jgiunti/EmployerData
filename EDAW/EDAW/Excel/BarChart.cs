@@ -18,11 +18,21 @@ namespace EDAW.ExcelSpace
             _appExcel = app;
         }
 
-        public override void SetSource(double row1, double col1, double row2, double col2)
+        public override void SetSource(double row1, double col1, double row2, double col2, string plotby = "")
         {
             //_appExcel.ActiveChart.ChartWizard(Source: _appExcel.Range[_appExcel.Cells[row1, col1], _appExcel.Cells[row2, col2]], PlotBy: XlRowCol.xlColumns, CategoryLabels: 1, SeriesLabels: 1, HasLegend: 1, CategoryTitle: string.Empty, ValueTitle: string.Empty);
 
-            _appExcel.ActiveChart.ChartWizard(Source: _appExcel.Range[_appExcel.Cells[row1, col1], _appExcel.Cells[row2, col2]], PlotBy: XlRowCol.xlColumns);
+            XlRowCol plot;
+            if (plotby.Equals("Col"))
+            {
+                plot = XlRowCol.xlColumns;
+            }
+            else
+            {
+                plot = XlRowCol.xlRows;
+            }
+
+            _appExcel.ActiveChart.ChartWizard(Source: _appExcel.Range[_appExcel.Cells[row1, col1], _appExcel.Cells[row2, col2]], PlotBy: plot);
 
             _appExcel.ActiveChart.SetSourceData(_appExcel.Range[_appExcel.Cells[row1, col1], _appExcel.Cells[row2, col2]]);
         }

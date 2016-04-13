@@ -38,10 +38,6 @@ namespace EDAW.Utilities
                         excel.SetCellValue(row.Index + offset, cell.ColumnIndex + 1, cell.Value);
                     }
                 }
-                Graph newG = excel.NewGraph(50, 50, 1000, 300);
-
-                newG.SetSource(1, 2, 2, 18);
-
                 excel.Close();
             }
         }

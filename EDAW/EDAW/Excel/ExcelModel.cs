@@ -57,11 +57,19 @@ namespace EDAW.ExcelSpace
             _excel.Worksheets[sheet.Name].Activate();
         }
 
-        public Graph NewGraph(double xpos, double ypos, double width, double height, string type = "")
+        public Graph BarChart(double xpos, double ypos, double width, double height, string type = "")
         {
             _excel.ActiveSheet.ChartObjects.Add[xpos, ypos, width, height].Select();
             _excel.ActiveSheet.ChartObjects[1].Activate();
-            _excel.ActiveChart.ChartType = XlChartType.xl3DColumnClustered;
+            _excel.ActiveChart.ChartType = XlChartType.xlBarClustered;
+            return new BarChart(_excel);
+        }
+
+        public Graph ColumnChart(double xpos, double ypos, double width, double height, string type = "")
+        {
+            _excel.ActiveSheet.ChartObjects.Add[xpos, ypos, width, height].Select();
+            _excel.ActiveSheet.ChartObjects[1].Activate();
+            _excel.ActiveChart.ChartType = XlChartType.xlColumnClustered;
             return new BarChart(_excel);
         }
 

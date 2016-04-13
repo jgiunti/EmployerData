@@ -12,6 +12,7 @@ using System.Windows.Forms;
 using System;
 using MongoDB.Bson;
 using EDAW.Utilities;
+using EDAW.Reports;
 
 namespace EDAW
 {
@@ -36,7 +37,7 @@ namespace EDAW
 
             BindingList<JobExplorer> bind = new BindingList<JobExplorer>(allExplorers.ToList());
 
-            dgvExplorers.DataSource = (bind as IBindingList);           
+            dgvExplorers.DataSource = (bind as IBindingList);       
         }
 
         private void personalSurveyToolStripMenuItem_Click(object sender, System.EventArgs e)
@@ -45,7 +46,7 @@ namespace EDAW
 
             List<PersonalSurvey> survey = explorer.PersonalSurveyList.ToList();
 
-            FormSurvey frmSrvy = new FormSurvey();
+            FrmPersonalSurvey frmSrvy = new FrmPersonalSurvey();
             frmSrvy.LoadSurvey<PersonalSurvey>(survey);
 
             frmSrvy.Show();
@@ -64,8 +65,8 @@ namespace EDAW
             JobExplorer explorer = dgvExplorers.SelectedRows[0].DataBoundItem as JobExplorer;
             List<EmployerSurvey> survey = explorer.EmployerSurveyList.ToList();
 
-            FormSurvey frmSrvy = new FormSurvey();
-            frmSrvy.LoadSurvey<EmployerSurvey>(survey);
+            FrmPersonalSurvey frmSrvy = new FrmPersonalSurvey();
+            //frmSrvy.LoadSurvey<EmployerSurvey>(survey);
 
             frmSrvy.Show();
         }
@@ -83,6 +84,12 @@ namespace EDAW
             DataExporter exporter = new DataExporter(dgvExplorers);
 
             exporter.Export();
+        }
+
+        private void btnTop10_Click(object sender, EventArgs e)
+        {
+            IReport top10 = new Top10EmpValues();
+            top10.DrawReport();
         }
     }
 }
