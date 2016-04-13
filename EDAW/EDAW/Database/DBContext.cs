@@ -18,7 +18,7 @@ namespace EDAW.Database
         {
             if (_current == null)
             {
-                return new Mongo() as IRepository;
+                return _current = new Mongo() as IRepository;
             }
             else
             {

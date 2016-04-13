@@ -69,6 +69,12 @@
     <Compile Include="Database\Mongo.cs" />
     <Compile Include="Excel\BarChart.cs" />
     <Compile Include="Excel\ExcelModel.cs" />
+    <Compile Include="Forms\frmAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmAdmin.Designer.cs">
+      <DependentUpon>frmAdmin.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\frmPersonalSurvey.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -100,6 +106,9 @@
     <Compile Include="Reports\ChangeOverTime.cs" />
     <Compile Include="Reports\Top10EmpValues.cs" />
     <Compile Include="Utilities\DataExporter.cs" />
+    <EmbeddedResource Include="Forms\frmAdmin.resx">
+      <DependentUpon>frmAdmin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmPersonalSurvey.resx">
       <DependentUpon>frmPersonalSurvey.cs</DependentUpon>
     </EmbeddedResource>

@@ -43,9 +43,12 @@
             this.btnExport = new System.Windows.Forms.Button();
             this.grpExport = new System.Windows.Forms.GroupBox();
             this.btnTop10 = new System.Windows.Forms.Button();
+            this.groupAdmin = new System.Windows.Forms.GroupBox();
+            this.btnAdmin = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvExplorers)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             this.grpExport.SuspendLayout();
+            this.groupAdmin.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgvExplorers
@@ -160,11 +163,32 @@
             this.btnTop10.UseVisualStyleBackColor = true;
             this.btnTop10.Click += new System.EventHandler(this.btnTop10_Click);
             // 
+            // groupAdmin
+            // 
+            this.groupAdmin.Controls.Add(this.btnAdmin);
+            this.groupAdmin.Location = new System.Drawing.Point(163, 46);
+            this.groupAdmin.Name = "groupAdmin";
+            this.groupAdmin.Size = new System.Drawing.Size(124, 56);
+            this.groupAdmin.TabIndex = 3;
+            this.groupAdmin.TabStop = false;
+            this.groupAdmin.Text = "Admin Screen";
+            // 
+            // btnAdmin
+            // 
+            this.btnAdmin.Location = new System.Drawing.Point(19, 19);
+            this.btnAdmin.Name = "btnAdmin";
+            this.btnAdmin.Size = new System.Drawing.Size(75, 23);
+            this.btnAdmin.TabIndex = 1;
+            this.btnAdmin.Text = "Open";
+            this.btnAdmin.UseVisualStyleBackColor = true;
+            this.btnAdmin.Click += new System.EventHandler(this.btnAdmin_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1226, 615);
+            this.Controls.Add(this.groupAdmin);
             this.Controls.Add(this.btnTop10);
             this.Controls.Add(this.grpExport);
             this.Controls.Add(this.dgvExplorers);
@@ -173,6 +197,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvExplorers)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
             this.grpExport.ResumeLayout(false);
+            this.groupAdmin.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -193,6 +218,8 @@
         private System.Windows.Forms.Button btnExport;
         private System.Windows.Forms.GroupBox grpExport;
         private System.Windows.Forms.Button btnTop10;
+        private System.Windows.Forms.GroupBox groupAdmin;
+        private System.Windows.Forms.Button btnAdmin;
     }
 }
 

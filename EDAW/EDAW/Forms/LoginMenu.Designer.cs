@@ -102,6 +102,7 @@
             this.Controls.Add(this.UserTxt);
             this.Controls.Add(this.txt_username);
             this.Name = "LoginMenu";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LoginMenu";
             this.Load += new System.EventHandler(this.LoginMenu_Load);
             this.ResumeLayout(false);

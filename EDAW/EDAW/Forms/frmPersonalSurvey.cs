@@ -18,9 +18,6 @@ namespace EDAW.Forms
 {
     public partial class FrmPersonalSurvey : Form
     {
-        bool personal = false;
-        bool employer = false;
-
         public FrmPersonalSurvey()
         {
             InitializeComponent();

@@ -13,6 +13,7 @@ using System;
 using MongoDB.Bson;
 using EDAW.Utilities;
 using EDAW.Reports;
+using EDAW.App.Data;
 
 namespace EDAW
 {
@@ -22,6 +23,10 @@ namespace EDAW
         {
             InitializeComponent();
 
+            if (AppEnvironment.currentUser.securityLevel == User.SecurityLevel.admin)
+            {
+                groupAdmin.Hide();
+            }
             dgvExplorers.AutoGenerateColumns = false;
             colOccupation.DataPropertyName = "occupation";
             colJobLvl.DataPropertyName = "joblevel";
@@ -90,6 +95,12 @@ namespace EDAW
         {
             IReport top10 = new Top10EmpValues();
             top10.DrawReport();
+        }
+
+        private void btnAdmin_Click(object sender, EventArgs e)
+        {
+            frmAdmin admin = new frmAdmin();
+            admin.Show();
         }
     }
 }
