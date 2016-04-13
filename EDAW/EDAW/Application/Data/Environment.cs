@@ -1,14 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using EDAW.Data;
+using System;
 
 namespace EDAW.App.Data
 {
-    public static class User
+    public static class Environment
     {
         public static string saveFilePath = @"G:\Documents\ExcelTest\";
+
+        public static User currentUser; 
 
         public static void Init()
         {

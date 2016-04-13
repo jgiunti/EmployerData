@@ -59,11 +59,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abstract\Graph.cs" />
-    <Compile Include="Application\Data\User.cs" />
+    <Compile Include="Application\Data\Environment.cs" />
     <Compile Include="Contexts\EmployerManager.cs" />
     <Compile Include="Contexts\EmployerSurveyManager.cs" />
     <Compile Include="Contexts\JobExplorerManager.cs" />
     <Compile Include="Contexts\PersonalSurveyManager.cs" />
+    <Compile Include="Contexts\UserManager.cs" />
     <Compile Include="Database\DBContext.cs" />
     <Compile Include="Database\Mongo.cs" />
     <Compile Include="Excel\BarChart.cs" />
@@ -73,6 +74,12 @@
     </Compile>
     <Compile Include="Forms\frmPersonalSurvey.Designer.cs">
       <DependentUpon>frmPersonalSurvey.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\LoginMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\LoginMenu.designer.cs">
+      <DependentUpon>LoginMenu.cs</DependentUpon>
     </Compile>
     <Compile Include="Interfaces\IChart.cs" />
     <Compile Include="Interfaces\IReport.cs" />
@@ -87,6 +94,7 @@
       <DependentUpon>Launchpad.cs</DependentUpon>
     </Compile>
     <Compile Include="Objects\PersonalSurvey.cs" />
+    <Compile Include="Objects\User.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Reports\ChangeOverTime.cs" />
@@ -97,6 +105,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Launchpad.resx">
       <DependentUpon>Launchpad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\LoginMenu.resx">
+      <DependentUpon>LoginMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
