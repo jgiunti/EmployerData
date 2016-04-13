@@ -5,21 +5,26 @@ namespace EDAW.Data
 {
     public class User
     {
-
-
-        public ObjectId id { get; set; }
+        public ObjectId id;
         [BsonIgnoreIfNull]
         
         public string username { get; set; }
         public string password { get; set; }
-        public double security_level { get; set; }
-       
-
-        public User(string use, string pass, double sec)
+        public enum SecurityLevel
         {
+            user,
+            admin
+        };
+        public SecurityLevel securityLevel { get; set; }
+        public string savePath { get; set; }
+
+        public User(string use, string pass, SecurityLevel sec, string path)
+        {
+            
             username = use;
             password = pass;
-            security_level = sec;
+            securityLevel = sec;
+            savePath = path;
             
         }
         public User() { }

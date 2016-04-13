@@ -3,6 +3,7 @@ using EDAW.Interfaces;
 using Microsoft.Office.Interop.Excel;
 using System.Runtime.InteropServices;
 using EDAW.Abstract;
+using EDAW.App.Data;
 
 namespace EDAW.ExcelSpace
 {
@@ -43,7 +44,7 @@ namespace EDAW.ExcelSpace
 
         private void Save()
         {
-            _excel.Application.ActiveWorkbook.SaveAs(App.Data.Environment.saveFilePath + _fileName, XlSaveAsAccessMode.xlNoChange);
+            _excel.Application.ActiveWorkbook.SaveAs(AppEnvironment.currentUser.savePath + _fileName, XlSaveAsAccessMode.xlNoChange);
         }
 
         public void NewSheet()

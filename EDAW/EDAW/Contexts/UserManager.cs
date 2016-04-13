@@ -21,5 +21,10 @@ namespace EDAW.Contexts
         {
             return Users.AsQueryable().Where(predicate);
         }
+
+        public static void Add(User user)
+        {
+            DBContext.Current.Add<User>(user);
+        }
     }
 }

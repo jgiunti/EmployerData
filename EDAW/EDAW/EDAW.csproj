@@ -59,7 +59,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abstract\Graph.cs" />
-    <Compile Include="Application\Data\Environment.cs" />
+    <Compile Include="Application\Data\AppEnvironment.cs" />
     <Compile Include="Contexts\EmployerManager.cs" />
     <Compile Include="Contexts\EmployerSurveyManager.cs" />
     <Compile Include="Contexts\JobExplorerManager.cs" />

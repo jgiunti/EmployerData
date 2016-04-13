@@ -1,4 +1,5 @@
-﻿using EDAW.Contexts;
+﻿using EDAW.App.Data;
+using EDAW.Contexts;
 using EDAW.Data;
 using EDAW.Data;
 using System;
@@ -21,21 +22,21 @@ namespace EDAW.Forms
         }
 
         private void button_submit_Click(object sender, EventArgs e)
-        {
-
-
-            //IEnumerable<User> temp_pass = UserManager.Find(x => x.password == txt_password.Text);
+        {          
             IEnumerable<User> temp_user = UserManager.Find(x => x.username == txt_username.Text);
+            if (temp_user.Count() == 0)
+            {
+                MessageBox.Show("Invalid Username");
+                return;
+            }
             User self = temp_user.FirstOrDefault();
             if (self == null) {
                 MessageBox.Show("Incorrect");
                 return;
-            }
-            
-            // UserManager.Find(x => x.username == str);
+            }           
             if (txt_password.Text.Equals("") || txt_username.Text.Equals(""))
             {
-                MessageBox.Show("Incorrect Username or Password\n");
+                MessageBox.Show("Please enter a valid username and password\n");
             }
             else
             {
@@ -46,22 +47,17 @@ namespace EDAW.Forms
                     }
                     else
                     {
-
-
+                        AppEnvironment.currentUser = self;
                         this.Hide();
-                        new Form1().Show();
-                        //Application.Run(new Form1());
-                    }
-                    
-                    
-                    //JobExplorerManager.JobExplorers.Where(x => x.id == 1);
+                        new Form1().ShowDialog();
+                    }                                     
                 }
                 catch
                 {
 
                 }
             }
-            //return temp;
+            this.Close();
         }
 
         private void LoginMenu_Load(object sender, EventArgs e)
