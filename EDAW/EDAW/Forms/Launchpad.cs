@@ -23,11 +23,12 @@ namespace EDAW
         {
             InitializeComponent();
 
-            if (AppEnvironment.currentUser.securityLevel == User.SecurityLevel.admin)
+            if (AppEnvironment.currentUser.securityLevel != User.SecurityLevel.admin)
             {
                 groupAdmin.Hide();
             }
             dgvExplorers.AutoGenerateColumns = false;
+            dgvExplorers.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             colOccupation.DataPropertyName = "occupation";
             colJobLvl.DataPropertyName = "joblevel";
             colJobLvlOthr.DataPropertyName = "joblevel_other";
@@ -78,10 +79,10 @@ namespace EDAW
 
         private void dgvExplorers_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex > -1)
-            {
-                dgvExplorers.Rows[e.RowIndex].Selected = true;
-            }
+            //if (e.RowIndex > -1)
+            //{
+            //    dgvExplorers.Rows[e.RowIndex].Selected = true;
+            //}
         }
 
         private void btnExport_Click(object sender, EventArgs e)

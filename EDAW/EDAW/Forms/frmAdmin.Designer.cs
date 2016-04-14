@@ -68,6 +68,7 @@
             this.dgvUsers.Name = "dgvUsers";
             this.dgvUsers.Size = new System.Drawing.Size(438, 520);
             this.dgvUsers.TabIndex = 0;
+            this.dgvUsers.SelectionChanged += new System.EventHandler(this.dgvUsers_SelectionChanged);
             // 
             // colUsername
             // 
@@ -130,6 +131,7 @@
             // 
             // cboSecurity
             // 
+            this.cboSecurity.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboSecurity.FormattingEnabled = true;
             this.cboSecurity.Location = new System.Drawing.Point(145, 91);
             this.cboSecurity.Name = "cboSecurity";
@@ -246,6 +248,7 @@
             // 
             // cboEditSecurity
             // 
+            this.cboEditSecurity.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboEditSecurity.FormattingEnabled = true;
             this.cboEditSecurity.Location = new System.Drawing.Point(145, 91);
             this.cboEditSecurity.Name = "cboEditSecurity";
