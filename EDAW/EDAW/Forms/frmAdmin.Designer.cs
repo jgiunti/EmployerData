@@ -33,17 +33,17 @@
             this.colSecLevel = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colSavePath = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grpAddUser = new System.Windows.Forms.GroupBox();
-            this.txtName = new System.Windows.Forms.TextBox();
-            this.txtPass = new System.Windows.Forms.TextBox();
-            this.txtSavePth = new System.Windows.Forms.TextBox();
-            this.cboSecurity = new System.Windows.Forms.ComboBox();
-            this.lblName = new System.Windows.Forms.Label();
-            this.lblPassword = new System.Windows.Forms.Label();
-            this.lblSave = new System.Windows.Forms.Label();
-            this.lblSecurity = new System.Windows.Forms.Label();
             this.btnAdd = new System.Windows.Forms.Button();
+            this.lblSecurity = new System.Windows.Forms.Label();
+            this.lblSave = new System.Windows.Forms.Label();
+            this.lblPassword = new System.Windows.Forms.Label();
+            this.lblName = new System.Windows.Forms.Label();
+            this.cboSecurity = new System.Windows.Forms.ComboBox();
+            this.txtSavePth = new System.Windows.Forms.TextBox();
+            this.txtPass = new System.Windows.Forms.TextBox();
+            this.txtName = new System.Windows.Forms.TextBox();
             this.groupEdit = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -52,6 +52,7 @@
             this.txtEditSavePath = new System.Windows.Forms.TextBox();
             this.txtEditPw = new System.Windows.Forms.TextBox();
             this.txtEditUsername = new System.Windows.Forms.TextBox();
+            this.btnDelete = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsers)).BeginInit();
             this.grpAddUser.SuspendLayout();
             this.groupEdit.SuspendLayout();
@@ -59,13 +60,17 @@
             // 
             // dgvUsers
             // 
+            this.dgvUsers.AllowUserToAddRows = false;
+            this.dgvUsers.AllowUserToDeleteRows = false;
             this.dgvUsers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvUsers.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colUsername,
             this.colSecLevel,
             this.colSavePath});
             this.dgvUsers.Location = new System.Drawing.Point(414, 12);
+            this.dgvUsers.MultiSelect = false;
             this.dgvUsers.Name = "dgvUsers";
+            this.dgvUsers.ReadOnly = true;
             this.dgvUsers.Size = new System.Drawing.Size(438, 520);
             this.dgvUsers.TabIndex = 0;
             this.dgvUsers.SelectionChanged += new System.EventHandler(this.dgvUsers_SelectionChanged);
@@ -107,63 +112,15 @@
             this.grpAddUser.TabStop = false;
             this.grpAddUser.Text = "Add User";
             // 
-            // txtName
+            // btnAdd
             // 
-            this.txtName.Location = new System.Drawing.Point(6, 44);
-            this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(118, 20);
-            this.txtName.TabIndex = 0;
-            // 
-            // txtPass
-            // 
-            this.txtPass.Location = new System.Drawing.Point(6, 92);
-            this.txtPass.Name = "txtPass";
-            this.txtPass.PasswordChar = '*';
-            this.txtPass.Size = new System.Drawing.Size(118, 20);
-            this.txtPass.TabIndex = 1;
-            // 
-            // txtSavePth
-            // 
-            this.txtSavePth.Location = new System.Drawing.Point(145, 44);
-            this.txtSavePth.Name = "txtSavePth";
-            this.txtSavePth.Size = new System.Drawing.Size(245, 20);
-            this.txtSavePth.TabIndex = 2;
-            // 
-            // cboSecurity
-            // 
-            this.cboSecurity.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboSecurity.FormattingEnabled = true;
-            this.cboSecurity.Location = new System.Drawing.Point(145, 91);
-            this.cboSecurity.Name = "cboSecurity";
-            this.cboSecurity.Size = new System.Drawing.Size(121, 21);
-            this.cboSecurity.TabIndex = 3;
-            // 
-            // lblName
-            // 
-            this.lblName.AutoSize = true;
-            this.lblName.Location = new System.Drawing.Point(6, 28);
-            this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(55, 13);
-            this.lblName.TabIndex = 4;
-            this.lblName.Text = "Username";
-            // 
-            // lblPassword
-            // 
-            this.lblPassword.AutoSize = true;
-            this.lblPassword.Location = new System.Drawing.Point(6, 76);
-            this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(53, 13);
-            this.lblPassword.TabIndex = 5;
-            this.lblPassword.Text = "Password";
-            // 
-            // lblSave
-            // 
-            this.lblSave.AutoSize = true;
-            this.lblSave.Location = new System.Drawing.Point(142, 28);
-            this.lblSave.Name = "lblSave";
-            this.lblSave.Size = new System.Drawing.Size(57, 13);
-            this.lblSave.TabIndex = 6;
-            this.lblSave.Text = "Save Path";
+            this.btnAdd.Location = new System.Drawing.Point(6, 133);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(75, 23);
+            this.btnAdd.TabIndex = 8;
+            this.btnAdd.Text = "Add";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // lblSecurity
             // 
@@ -174,18 +131,68 @@
             this.lblSecurity.TabIndex = 7;
             this.lblSecurity.Text = "Security Level";
             // 
-            // btnAdd
+            // lblSave
             // 
-            this.btnAdd.Location = new System.Drawing.Point(6, 133);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(75, 23);
-            this.btnAdd.TabIndex = 8;
-            this.btnAdd.Text = "Add";
-            this.btnAdd.UseVisualStyleBackColor = true;
+            this.lblSave.AutoSize = true;
+            this.lblSave.Location = new System.Drawing.Point(142, 28);
+            this.lblSave.Name = "lblSave";
+            this.lblSave.Size = new System.Drawing.Size(57, 13);
+            this.lblSave.TabIndex = 6;
+            this.lblSave.Text = "Save Path";
+            // 
+            // lblPassword
+            // 
+            this.lblPassword.AutoSize = true;
+            this.lblPassword.Location = new System.Drawing.Point(6, 76);
+            this.lblPassword.Name = "lblPassword";
+            this.lblPassword.Size = new System.Drawing.Size(53, 13);
+            this.lblPassword.TabIndex = 5;
+            this.lblPassword.Text = "Password";
+            // 
+            // lblName
+            // 
+            this.lblName.AutoSize = true;
+            this.lblName.Location = new System.Drawing.Point(6, 28);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(55, 13);
+            this.lblName.TabIndex = 4;
+            this.lblName.Text = "Username";
+            // 
+            // cboSecurity
+            // 
+            this.cboSecurity.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboSecurity.FormattingEnabled = true;
+            this.cboSecurity.Location = new System.Drawing.Point(145, 91);
+            this.cboSecurity.Name = "cboSecurity";
+            this.cboSecurity.Size = new System.Drawing.Size(121, 21);
+            this.cboSecurity.TabIndex = 3;
+            // 
+            // txtSavePth
+            // 
+            this.txtSavePth.Location = new System.Drawing.Point(145, 44);
+            this.txtSavePth.Name = "txtSavePth";
+            this.txtSavePth.Size = new System.Drawing.Size(245, 20);
+            this.txtSavePth.TabIndex = 2;
+            // 
+            // txtPass
+            // 
+            this.txtPass.Location = new System.Drawing.Point(6, 92);
+            this.txtPass.Name = "txtPass";
+            this.txtPass.PasswordChar = '*';
+            this.txtPass.Size = new System.Drawing.Size(118, 20);
+            this.txtPass.TabIndex = 1;
+            // 
+            // txtName
+            // 
+            this.txtName.Location = new System.Drawing.Point(6, 44);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(118, 20);
+            this.txtName.TabIndex = 0;
             // 
             // groupEdit
             // 
-            this.groupEdit.Controls.Add(this.button1);
+            this.groupEdit.Controls.Add(this.btnDelete);
+            this.groupEdit.Controls.Add(this.btnSave);
             this.groupEdit.Controls.Add(this.label1);
             this.groupEdit.Controls.Add(this.label2);
             this.groupEdit.Controls.Add(this.label3);
@@ -201,14 +208,15 @@
             this.groupEdit.TabStop = false;
             this.groupEdit.Text = "Edit User";
             // 
-            // button1
+            // btnSave
             // 
-            this.button1.Location = new System.Drawing.Point(6, 133);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Add";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnSave.Location = new System.Drawing.Point(6, 133);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(75, 23);
+            this.btnSave.TabIndex = 8;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // label1
             // 
@@ -276,6 +284,16 @@
             this.txtEditUsername.Size = new System.Drawing.Size(118, 20);
             this.txtEditUsername.TabIndex = 0;
             // 
+            // btnDelete
+            // 
+            this.btnDelete.Location = new System.Drawing.Point(145, 133);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(75, 23);
+            this.btnDelete.TabIndex = 9;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
             // frmAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -313,7 +331,7 @@
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.GroupBox groupEdit;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
@@ -322,5 +340,6 @@
         private System.Windows.Forms.TextBox txtEditSavePath;
         private System.Windows.Forms.TextBox txtEditPw;
         private System.Windows.Forms.TextBox txtEditUsername;
+        private System.Windows.Forms.Button btnDelete;
     }
 }

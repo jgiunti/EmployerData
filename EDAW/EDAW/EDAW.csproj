@@ -75,6 +75,12 @@
     <Compile Include="Forms\frmAdmin.Designer.cs">
       <DependentUpon>frmAdmin.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\frmConfirm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmConfirm.Designer.cs">
+      <DependentUpon>frmConfirm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\frmPersonalSurvey.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -108,6 +114,9 @@
     <Compile Include="Utilities\DataExporter.cs" />
     <EmbeddedResource Include="Forms\frmAdmin.resx">
       <DependentUpon>frmAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmConfirm.resx">
+      <DependentUpon>frmConfirm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmPersonalSurvey.resx">
       <DependentUpon>frmPersonalSurvey.cs</DependentUpon>

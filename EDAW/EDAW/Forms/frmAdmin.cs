@@ -1,5 +1,6 @@
 ﻿using EDAW.Contexts;
 using EDAW.Data;
+using MongoDB.Driver;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -27,11 +28,7 @@ namespace EDAW.Forms
             colSecLevel.DataPropertyName = "securityLevel";
             colSavePath.DataPropertyName = "savePath";
 
-            IQueryable<User> users = UserManager.Users;
-
-            BindingList<User> bind = new BindingList<User>(users.ToList());
-
-            dgvUsers.DataSource = (bind as IBindingList);
+            RefreshView();
         }
 
         private void dgvUsers_SelectionChanged(object sender, EventArgs e)
@@ -57,6 +54,52 @@ namespace EDAW.Forms
                     }
                 }
             }
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            User addUser = new User(txtName.Text, txtPass.Text, (User.SecurityLevel)cboSecurity.SelectedItem, txtSavePth.Text);
+
+            UserManager.Add(addUser);
+
+            RefreshView();
+        }
+
+        private void RefreshView()
+        {
+            IQueryable<User> users = UserManager.Users;
+
+            BindingList<User> bind = new BindingList<User>(users.ToList());
+
+            dgvUsers.DataSource = (bind as IBindingList);
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            frmConfirm confirm = new frmConfirm("This will delete the current user and cannot be undone. Do you want to delete the current user?");
+            confirm.ShowDialog();
+            
+            if (confirm.DialogResult == DialogResult.Yes)
+            {
+                User toDelete = dgvUsers.SelectedRows[0].DataBoundItem as User;
+
+                UserManager.Delete(toDelete);
+
+                RefreshView();
+            }
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            User toUpdate = dgvUsers.SelectedRows[0].DataBoundItem as User;
+
+            var builder = Builders<User>.Update;
+            var update = builder.Set(usr => usr.username, txtEditUsername.Text).Set(usr => usr.password, txtEditPw.Text)
+                .Set(usr => usr.savePath, txtEditSavePath.Text).Set(usr => usr.securityLevel, (User.SecurityLevel)cboEditSecurity.SelectedIndex);
+
+            UserManager.Update(toUpdate, update);
+
+            RefreshView();
         }
     }
 }

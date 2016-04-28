@@ -32,23 +32,25 @@ namespace EDAW.Reports
 
             int totalExplorers = JobExplorerManager.JobExplorers.Count();
 
-            workLife = new Tuple<string, double>("Work Life Balance", PersonalSurveyManager.PersonalSurveys.Sum(x => x.worklife_self) / totalExplorers);
-            jobsec = new Tuple<string, double>("Job Security", PersonalSurveyManager.PersonalSurveys.Sum(x => x.jobsec_self) / totalExplorers);
-            training = new Tuple<string, double>("Training and Development", PersonalSurveyManager.PersonalSurveys.Sum(x => x.td_self) / totalExplorers);
-            careerpath = new Tuple<string, double>("Clear Career Path", PersonalSurveyManager.PersonalSurveys.Sum(x => x.careerpath_self) / totalExplorers);
-            promocrit = new Tuple<string, double>("Clear Promotion Criteria", PersonalSurveyManager.PersonalSurveys.Sum(x => x.promocrit_self) / totalExplorers);
-            workload = new Tuple<string, double>("Manageable Workload", PersonalSurveyManager.PersonalSurveys.Sum(x => x.workload_self) / totalExplorers);
-            promo = new Tuple<string, double>("Promotion Opportunities", PersonalSurveyManager.PersonalSurveys.Sum(x => x.promo_self) / totalExplorers);
-            auton = new Tuple<string, double>("Autonomy", PersonalSurveyManager.PersonalSurveys.Sum(x => x.auton_self) / totalExplorers);
-            salary = new Tuple<string, double>("High Salary", PersonalSurveyManager.PersonalSurveys.Sum(x => x.salary_self) / totalExplorers);
-            goodSuper = new Tuple<string, double>("Good Supervisors", PersonalSurveyManager.PersonalSurveys.Sum(x => x.goodsup_self) / totalExplorers);
-            flex = new Tuple<string, double>("Flexible Schedules", PersonalSurveyManager.PersonalSurveys.Sum(x => x.flex_self) / totalExplorers);
-            rewPerf = new Tuple<string, double>("Performance Rewards", PersonalSurveyManager.PersonalSurveys.Sum(x => x.rewperf_self) / totalExplorers);
-            mission = new Tuple<string, double>("A Clear Mission", PersonalSurveyManager.PersonalSurveys.Sum(x => x.mission_self) / totalExplorers);
-            health = new Tuple<string, double>("Good Health Benefits", PersonalSurveyManager.PersonalSurveys.Sum(x => x.health_self) / totalExplorers);
-            rewrecog = new Tuple<string, double>("Rewards and Recognition", PersonalSurveyManager.PersonalSurveys.Sum(x => x.rewrecog_self) / totalExplorers);
-            workspace = new Tuple<string, double>("Private Work Space", PersonalSurveyManager.PersonalSurveys.Sum(x => x.workspace_self) / totalExplorers);
-            poorperfs = new Tuple<string, double>("Deals with Poor Performance", PersonalSurveyManager.PersonalSurveys.Sum(x => x.poorperfs_self) / totalExplorers);
+            int totalSurveys = PersonalSurveyManager.PersonalSurveys.Count();
+
+            workLife = new Tuple<string, double>("Work Life Balance", PersonalSurveyManager.PersonalSurveys.Sum(x => x.worklife_self) / totalSurveys);
+            jobsec = new Tuple<string, double>("Job Security", PersonalSurveyManager.PersonalSurveys.Sum(x => x.jobsec_self) / totalSurveys);
+            training = new Tuple<string, double>("Training and Development", PersonalSurveyManager.PersonalSurveys.Sum(x => x.td_self) / totalSurveys);
+            careerpath = new Tuple<string, double>("Clear Career Path", PersonalSurveyManager.PersonalSurveys.Sum(x => x.careerpath_self) / totalSurveys);
+            promocrit = new Tuple<string, double>("Clear Promotion Criteria", PersonalSurveyManager.PersonalSurveys.Sum(x => x.promocrit_self) / totalSurveys);
+            workload = new Tuple<string, double>("Manageable Workload", PersonalSurveyManager.PersonalSurveys.Sum(x => x.workload_self) / totalSurveys);
+            promo = new Tuple<string, double>("Promotion Opportunities", PersonalSurveyManager.PersonalSurveys.Sum(x => x.promo_self) / totalSurveys);
+            auton = new Tuple<string, double>("Autonomy", PersonalSurveyManager.PersonalSurveys.Sum(x => x.auton_self) / totalSurveys);
+            salary = new Tuple<string, double>("High Salary", PersonalSurveyManager.PersonalSurveys.Sum(x => x.salary_self) / totalSurveys);
+            goodSuper = new Tuple<string, double>("Good Supervisors", PersonalSurveyManager.PersonalSurveys.Sum(x => x.goodsup_self) / totalSurveys);
+            flex = new Tuple<string, double>("Flexible Schedules", PersonalSurveyManager.PersonalSurveys.Sum(x => x.flex_self) / totalSurveys);
+            rewPerf = new Tuple<string, double>("Performance Rewards", PersonalSurveyManager.PersonalSurveys.Sum(x => x.rewperf_self) / totalSurveys);
+            mission = new Tuple<string, double>("A Clear Mission", PersonalSurveyManager.PersonalSurveys.Sum(x => x.mission_self) / totalSurveys);
+            health = new Tuple<string, double>("Good Health Benefits", PersonalSurveyManager.PersonalSurveys.Sum(x => x.health_self) / totalSurveys);
+            rewrecog = new Tuple<string, double>("Rewards and Recognition", PersonalSurveyManager.PersonalSurveys.Sum(x => x.rewrecog_self) / totalSurveys);
+            workspace = new Tuple<string, double>("Private Work Space", PersonalSurveyManager.PersonalSurveys.Sum(x => x.workspace_self) / totalSurveys);
+            poorperfs = new Tuple<string, double>("Deals with Poor Performance", PersonalSurveyManager.PersonalSurveys.Sum(x => x.poorperfs_self) / totalSurveys);
 
             List<Tuple<string, double>> critList = new List<Tuple<string, double>>();
             critList.Add(workLife);

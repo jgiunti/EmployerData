@@ -26,5 +26,15 @@ namespace EDAW.Contexts
         {
             DBContext.Current.Add<User>(user);
         }
+
+        public static void Delete(User user)
+        {
+            DBContext.Current.Delete<User>(x => x.id == user.id);
+        }
+
+        public static void Update(User user, UpdateDefinition<User> update)
+        {
+            DBContext.Current.Update<User>(x => x.id == user.id, update);
+        }
     }
 }
