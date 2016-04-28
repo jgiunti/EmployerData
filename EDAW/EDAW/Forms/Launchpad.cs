@@ -71,8 +71,8 @@ namespace EDAW
             JobExplorer explorer = dgvExplorers.SelectedRows[0].DataBoundItem as JobExplorer;
             List<EmployerSurvey> survey = explorer.EmployerSurveyList.ToList();
 
-            FrmPersonalSurvey frmSrvy = new FrmPersonalSurvey();
-            //frmSrvy.LoadSurvey<EmployerSurvey>(survey);
+            frmEmpSurvey frmSrvy = new frmEmpSurvey();
+            frmSrvy.LoadSurvey<EmployerSurvey>(survey);
 
             frmSrvy.Show();
         }

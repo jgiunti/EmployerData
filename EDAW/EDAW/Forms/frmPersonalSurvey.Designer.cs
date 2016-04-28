@@ -42,6 +42,7 @@
             this.dgvSurvey.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSurvey.Location = new System.Drawing.Point(13, 86);
             this.dgvSurvey.Name = "dgvSurvey";
+            this.dgvSurvey.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvSurvey.Size = new System.Drawing.Size(878, 550);
             this.dgvSurvey.TabIndex = 0;
             // 
@@ -96,7 +97,7 @@
             this.cboEmployers.Size = new System.Drawing.Size(121, 21);
             this.cboEmployers.TabIndex = 5;
             // 
-            // FormSurvey
+            // FrmPersonalSurvey
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -107,7 +108,7 @@
             this.Controls.Add(this.btnExport);
             this.Controls.Add(this.btnRun);
             this.Controls.Add(this.dgvSurvey);
-            this.Name = "FormSurvey";
+            this.Name = "FrmPersonalSurvey";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.dgvSurvey)).EndInit();
             this.ResumeLayout(false);

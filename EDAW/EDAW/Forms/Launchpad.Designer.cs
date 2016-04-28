@@ -62,7 +62,7 @@
             this.colEducation,
             this.colEducationOthr,
             this.colGener});
-            this.dgvExplorers.Location = new System.Drawing.Point(453, 12);
+            this.dgvExplorers.Location = new System.Drawing.Point(298, 12);
             this.dgvExplorers.Name = "dgvExplorers";
             this.dgvExplorers.Size = new System.Drawing.Size(761, 591);
             this.dgvExplorers.TabIndex = 0;
@@ -146,7 +146,7 @@
             // grpExport
             // 
             this.grpExport.Controls.Add(this.btnExport);
-            this.grpExport.Location = new System.Drawing.Point(312, 46);
+            this.grpExport.Location = new System.Drawing.Point(158, 46);
             this.grpExport.Name = "grpExport";
             this.grpExport.Size = new System.Drawing.Size(124, 56);
             this.grpExport.TabIndex = 2;
@@ -155,7 +155,7 @@
             // 
             // btnTop10
             // 
-            this.btnTop10.Location = new System.Drawing.Point(331, 152);
+            this.btnTop10.Location = new System.Drawing.Point(177, 152);
             this.btnTop10.Name = "btnTop10";
             this.btnTop10.Size = new System.Drawing.Size(75, 23);
             this.btnTop10.TabIndex = 2;
@@ -166,7 +166,7 @@
             // groupAdmin
             // 
             this.groupAdmin.Controls.Add(this.btnAdmin);
-            this.groupAdmin.Location = new System.Drawing.Point(163, 46);
+            this.groupAdmin.Location = new System.Drawing.Point(9, 46);
             this.groupAdmin.Name = "groupAdmin";
             this.groupAdmin.Size = new System.Drawing.Size(124, 56);
             this.groupAdmin.TabIndex = 3;
@@ -187,7 +187,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1226, 615);
+            this.ClientSize = new System.Drawing.Size(1079, 615);
             this.Controls.Add(this.groupAdmin);
             this.Controls.Add(this.btnTop10);
             this.Controls.Add(this.grpExport);

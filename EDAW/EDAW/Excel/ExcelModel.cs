@@ -56,7 +56,8 @@ namespace EDAW.ExcelSpace
         public Graph BarChart(double xpos, double ypos, double width, double height, string type = "")
         {
             _excel.ActiveSheet.ChartObjects.Add[xpos, ypos, width, height].Select();
-            _excel.ActiveSheet.ChartObjects[1].Activate();
+            int cnt = _excel.ActiveSheet.ChartObjects.Count;
+            _excel.ActiveSheet.ChartObjects[cnt].Activate();
             _excel.ActiveChart.ChartType = XlChartType.xlBarClustered;
             return new BarChart(_excel);
         }
@@ -64,7 +65,8 @@ namespace EDAW.ExcelSpace
         public Graph ColumnChart(double xpos, double ypos, double width, double height, string type = "")
         {
             _excel.ActiveSheet.ChartObjects.Add[xpos, ypos, width, height].Select();
-            _excel.ActiveSheet.ChartObjects[1].Activate();
+            int cnt = _excel.ActiveSheet.ChartObjects.Count;
+            _excel.ActiveSheet.ChartObjects[cnt].Activate();
             _excel.ActiveChart.ChartType = XlChartType.xlColumnClustered;
             return new BarChart(_excel);
         }

@@ -32,12 +32,10 @@ namespace EDAW.Reports
                 row = 2;
                 foreach (PersonalSurvey survey in _surveys)
                 {
-                    System.Diagnostics.Debug.WriteLine(survey.timeStamp);
                     foreach (var property in properties)
                     {
                         var value = typeof(PersonalSurvey).GetProperty(property.Name).GetValue(survey);
                         excel.SetCellValue(row, col++, value);
-                        System.Diagnostics.Debug.WriteLine(property.Name + ": " + value);
                     }
                     row++;
                     col = 1;

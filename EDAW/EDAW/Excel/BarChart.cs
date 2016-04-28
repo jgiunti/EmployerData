@@ -1,4 +1,5 @@
-﻿using EDAW.Abstract;
+﻿using System;
+using EDAW.Abstract;
 using Microsoft.Office.Interop.Excel;
 
 namespace EDAW.ExcelSpace
@@ -28,6 +29,11 @@ namespace EDAW.ExcelSpace
             _appExcel.ActiveChart.ChartWizard(Source: _appExcel.Range[_appExcel.Cells[row1, col1], _appExcel.Cells[row2, col2]], PlotBy: plot);
 
             _appExcel.ActiveChart.SetSourceData(_appExcel.Range[_appExcel.Cells[row1, col1], _appExcel.Cells[row2, col2]]);
+        }
+
+        public override void SetTitle(string title)
+        {
+            _appExcel.ActiveChart.ChartWizard(Title: title);
         }
     }
 }

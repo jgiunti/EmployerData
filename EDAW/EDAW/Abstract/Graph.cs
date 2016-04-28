@@ -9,5 +9,7 @@ namespace EDAW.Abstract
         public int height;
 
         public abstract void SetSource(double row1, double col1, double row2, double col2, string graphBy = "");
+
+        public abstract void SetTitle(string title);
     }
 }

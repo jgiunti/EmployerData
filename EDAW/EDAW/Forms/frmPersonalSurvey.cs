@@ -46,6 +46,19 @@ namespace EDAW.Forms
                 report = new ChangeOverTime(dgvSurvey.DataSource as List<PersonalSurvey>);
                 report.DrawReport();
             }
+            if (rdoMisMatch.Checked)
+            {
+                DataGridViewSelectedRowCollection surveys = dgvSurvey.SelectedRows;
+                
+                List<PersonalSurvey> plist = new List<PersonalSurvey>();
+                foreach (DataGridViewRow row in surveys)
+                {
+                    plist.Add(row.DataBoundItem as PersonalSurvey);
+                }
+                report = new EmpMismatch(plist, cboEmployers.SelectedValue as Employer);
+                report.DrawReport();
+                
+            }
         }
 
         private void btnExport_Click(object sender, EventArgs e)

@@ -81,6 +81,12 @@
     <Compile Include="Forms\frmConfirm.Designer.cs">
       <DependentUpon>frmConfirm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\frmEmpSurvey.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmEmpSurvey.Designer.cs">
+      <DependentUpon>frmEmpSurvey.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\frmPersonalSurvey.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -110,6 +116,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Reports\ChangeOverTime.cs" />
+    <Compile Include="Reports\EmpMismatch.cs" />
     <Compile Include="Reports\Top10EmpValues.cs" />
     <Compile Include="Utilities\DataExporter.cs" />
     <EmbeddedResource Include="Forms\frmAdmin.resx">
@@ -117,6 +124,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmConfirm.resx">
       <DependentUpon>frmConfirm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmEmpSurvey.resx">
+      <DependentUpon>frmEmpSurvey.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmPersonalSurvey.resx">
       <DependentUpon>frmPersonalSurvey.cs</DependentUpon>
