@@ -1,4 +1,5 @@
-﻿using EDAW.Contexts;
+﻿using EDAW.App.Data;
+using EDAW.Contexts;
 using EDAW.Data;
 using MongoDB.Driver;
 using System;
@@ -58,6 +59,12 @@ namespace EDAW.Forms
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            //usernames must be unique
+            if (UserManager.Find(usr => usr.username.Equals(txtName.Text)).Count() > 0)
+            {
+                MessageBox.Show("This user already exists");
+                return;
+            }
             User addUser = new User(txtName.Text, txtPass.Text, (User.SecurityLevel)cboSecurity.SelectedItem, txtSavePth.Text);
 
             UserManager.Add(addUser);
@@ -98,6 +105,11 @@ namespace EDAW.Forms
                 .Set(usr => usr.savePath, txtEditSavePath.Text).Set(usr => usr.securityLevel, (User.SecurityLevel)cboEditSecurity.SelectedIndex);
 
             UserManager.Update(toUpdate, update);
+
+            if (toUpdate.username.Equals(AppEnvironment.currentUser.username))
+            {
+                AppEnvironment.currentUser = toUpdate;
+            }
 
             RefreshView();
         }
