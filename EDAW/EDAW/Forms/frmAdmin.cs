@@ -65,7 +65,14 @@ namespace EDAW.Forms
                 MessageBox.Show("This user already exists");
                 return;
             }
-            User addUser = new User(txtName.Text, txtPass.Text, (User.SecurityLevel)cboSecurity.SelectedItem, txtSavePth.Text);
+
+            string savePath = txtSavePth.Text;
+            if (!savePath.EndsWith("\\"))
+            {
+                savePath = savePath + "\\";
+            }
+
+            User addUser = new User(txtName.Text, txtPass.Text, (User.SecurityLevel)cboSecurity.SelectedItem, savePath);
 
             UserManager.Add(addUser);
 
@@ -100,15 +107,21 @@ namespace EDAW.Forms
         {
             User toUpdate = dgvUsers.SelectedRows[0].DataBoundItem as User;
 
+            string savePath = txtEditSavePath.Text;
+            if (!savePath.EndsWith("\\"))
+            {
+                savePath = savePath + "\\";
+            }
+
             var builder = Builders<User>.Update;
             var update = builder.Set(usr => usr.username, txtEditUsername.Text).Set(usr => usr.password, txtEditPw.Text)
-                .Set(usr => usr.savePath, txtEditSavePath.Text).Set(usr => usr.securityLevel, (User.SecurityLevel)cboEditSecurity.SelectedIndex);
+                .Set(usr => usr.savePath, savePath).Set(usr => usr.securityLevel, (User.SecurityLevel)cboEditSecurity.SelectedIndex);
 
             UserManager.Update(toUpdate, update);
 
             if (toUpdate.username.Equals(AppEnvironment.currentUser.username))
             {
-                AppEnvironment.currentUser = toUpdate;
+                AppEnvironment.currentUser = UserManager.Find(usr => usr.username.Equals(AppEnvironment.currentUser.username)).First();
             }
 
             RefreshView();

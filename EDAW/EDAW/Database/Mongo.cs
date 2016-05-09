@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
+using System.Configuration;
 
 namespace EDAW.Database
 {
@@ -14,14 +15,17 @@ namespace EDAW.Database
         {
             get
             {
-                return this._client.GetDatabase("EmployerData");
+                var db = Properties.Settings.Default.database;
+                return this._client.GetDatabase(db);
             }
         }
 
         public Mongo()
         {
+            var connectionString = Properties.Settings.Default.host;
+
             MongoClientSettings settings = new MongoClientSettings();
-            settings.Server = new MongoServerAddress("localhost", 27017);
+            settings.Server = new MongoServerAddress(connectionString);
 
             _client = new MongoClient(settings);         
         }

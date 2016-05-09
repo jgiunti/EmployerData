@@ -43,7 +43,13 @@ namespace EDAW
 
             BindingList<JobExplorer> bind = new BindingList<JobExplorer>(allExplorers.ToList());
 
-            dgvExplorers.DataSource = (bind as IBindingList);       
+            dgvExplorers.DataSource = (bind as IBindingList);
+
+            List<IReport> reportList = new List<IReport>();
+
+            reportList.Add(new Top10EmpValues());
+
+            lstReports.DataSource = reportList;          
         }
 
         private void personalSurveyToolStripMenuItem_Click(object sender, System.EventArgs e)
@@ -94,7 +100,7 @@ namespace EDAW
 
         private void btnTop10_Click(object sender, EventArgs e)
         {
-            IReport top10 = new Top10EmpValues();
+            IReport top10 = lstReports.SelectedItem as IReport;//new Top10EmpValues();
             top10.DrawReport();
         }
 

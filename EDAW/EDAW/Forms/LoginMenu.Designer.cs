@@ -34,6 +34,7 @@
             this.txt_password = new System.Windows.Forms.TextBox();
             this.Title = new System.Windows.Forms.Label();
             this.button_submit = new System.Windows.Forms.Button();
+            this.btnConnection = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txt_username
@@ -82,7 +83,7 @@
             // 
             // button_submit
             // 
-            this.button_submit.Location = new System.Drawing.Point(129, 189);
+            this.button_submit.Location = new System.Drawing.Point(64, 188);
             this.button_submit.Name = "button_submit";
             this.button_submit.Size = new System.Drawing.Size(75, 23);
             this.button_submit.TabIndex = 5;
@@ -90,11 +91,22 @@
             this.button_submit.UseVisualStyleBackColor = true;
             this.button_submit.Click += new System.EventHandler(this.button_submit_Click);
             // 
+            // btnConnection
+            // 
+            this.btnConnection.Location = new System.Drawing.Point(217, 188);
+            this.btnConnection.Name = "btnConnection";
+            this.btnConnection.Size = new System.Drawing.Size(75, 23);
+            this.btnConnection.TabIndex = 6;
+            this.btnConnection.Text = "Connection";
+            this.btnConnection.UseVisualStyleBackColor = true;
+            this.btnConnection.Click += new System.EventHandler(this.btnConnection_Click);
+            // 
             // LoginMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(375, 262);
+            this.Controls.Add(this.btnConnection);
             this.Controls.Add(this.button_submit);
             this.Controls.Add(this.Title);
             this.Controls.Add(this.txt_password);
@@ -118,5 +130,6 @@
         private System.Windows.Forms.TextBox txt_password;
         private System.Windows.Forms.Label Title;
         private System.Windows.Forms.Button button_submit;
+        private System.Windows.Forms.Button btnConnection;
     }
 }

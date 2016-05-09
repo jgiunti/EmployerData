@@ -45,6 +45,7 @@
             this.btnTop10 = new System.Windows.Forms.Button();
             this.groupAdmin = new System.Windows.Forms.GroupBox();
             this.btnAdmin = new System.Windows.Forms.Button();
+            this.lstReports = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvExplorers)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             this.grpExport.SuspendLayout();
@@ -155,11 +156,11 @@
             // 
             // btnTop10
             // 
-            this.btnTop10.Location = new System.Drawing.Point(177, 152);
+            this.btnTop10.Location = new System.Drawing.Point(9, 341);
             this.btnTop10.Name = "btnTop10";
             this.btnTop10.Size = new System.Drawing.Size(75, 23);
             this.btnTop10.TabIndex = 2;
-            this.btnTop10.Text = "Top 10 ";
+            this.btnTop10.Text = "Run";
             this.btnTop10.UseVisualStyleBackColor = true;
             this.btnTop10.Click += new System.EventHandler(this.btnTop10_Click);
             // 
@@ -183,11 +184,20 @@
             this.btnAdmin.UseVisualStyleBackColor = true;
             this.btnAdmin.Click += new System.EventHandler(this.btnAdmin_Click);
             // 
+            // lstReports
+            // 
+            this.lstReports.FormattingEnabled = true;
+            this.lstReports.Location = new System.Drawing.Point(9, 127);
+            this.lstReports.Name = "lstReports";
+            this.lstReports.Size = new System.Drawing.Size(273, 199);
+            this.lstReports.TabIndex = 4;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1079, 615);
+            this.Controls.Add(this.lstReports);
             this.Controls.Add(this.groupAdmin);
             this.Controls.Add(this.btnTop10);
             this.Controls.Add(this.grpExport);
@@ -220,6 +230,7 @@
         private System.Windows.Forms.Button btnTop10;
         private System.Windows.Forms.GroupBox groupAdmin;
         private System.Windows.Forms.Button btnAdmin;
+        private System.Windows.Forms.ListBox lstReports;
     }
 }
 

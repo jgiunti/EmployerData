@@ -68,5 +68,11 @@ namespace EDAW.Forms
         {
 
         }
+
+        private void btnConnection_Click(object sender, EventArgs e)
+        {
+            frmConnection conn = new frmConnection();
+            conn.ShowDialog();
+        }
     }
 }
